@@ -1,0 +1,26 @@
+body {
+    padding: 15%;
+}
+
+.title {
+    margin-bottom: 30px;
+    border-bottom: solid 1px black;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.library-shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    row-gap: 20px;
+}
+
+.book {
+    border: solid 1px black;
+    width: 150px;
+    padding: 30px;
+    border-radius: 20px;
+    
+}

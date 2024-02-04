@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Welcome To The Library!</h1>
+        <h2>Here, You Can Add Or Remove Books From The Shelf.</h2>
+        <div class="buttons">
+            <button class="add">
+                NEW BOOK
+            </button>
+        </div>
+    </div>
+    <div class="library-shelf" id="shelf">
+        <!-- BY DEFAULT WE WILL HAVE ONE BOOK -->
+        <div class="book">
+            <h3>The Hobbit</h3>
+            <h4>J.R.R. Tolkien</h4>
+            <p>295 pages</p>
+            <button class="read">not read yet</button>
+        </div>
+    </div>
+    <dialog>
+        <form>
+            <fieldset>
+                <legend>New Book Information</legend>
+                <input id="title" type="text" placeholder="Book Title" required>
+                <input id="author" type="text" placeholder="Book Author" required>
+                <input id="pages" type="number" placeholder="Book Pages" required>
+            </fieldset>
+            <button class="close" type="button">Cancel</button>
+            <button class="submit" type="submit">Add Book</button>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
