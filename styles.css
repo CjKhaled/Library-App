@@ -24,3 +24,14 @@ body {
     border-radius: 20px;
     
 }
+
+.delete {
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+.read {
+    display: block;
+}
