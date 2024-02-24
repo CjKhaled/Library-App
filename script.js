@@ -1,48 +1,49 @@
-const originalBook = new Book('The Hobbit', "J.R.R. Tolkien", 295, false, 0);
-const myLibrary = [originalBook];
-let bookId = 1;
+class Book {
+    constructor(title, author, pages, read, id) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.id = id;
+        if (read) {
+            this.read = "read";
+        } else {
+            this.read = "not read yet";
+        }
+    }
+    printBook() {
+        let div = document.createElement('div');
+        div.className = 'book';
+        let h3 = document.createElement('h3');
+        h3.textContent = this.title;
+        let h4 = document.createElement('h4');
+        h4.textContent = this.author;
+        let p = document.createElement('p');
+        p.textContent = `${this.pages} pages`;
+        let deleteButton = document.createElement('button');
+        deleteButton.className = 'delete';
+        deleteButton.id = this.id;
+        deleteButton.textContent = 'Delete Book';
+        let read = document.createElement('button');
+        read.className = 'read';
+        read.textContent = this.read;
+        let id = document.createElement('span');
+        id.textContent = this.id;
 
-function Book(title, author, pages, read, id) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.id = id;
-    if (read) {
-        this.read = "read";
-    } else {
-        this.read = "not read yet";
+        div.appendChild(id);
+        div.appendChild(h3);
+        div.appendChild(h4);
+        div.appendChild(p);
+        div.appendChild(read);
+        div.appendChild(deleteButton);
+
+        let shelf = document.querySelector('.library-shelf');
+        shelf.appendChild(div);
     }
 }
 
-Book.prototype.printBook = function() {
-    let div = document.createElement('div');
-    div.className = 'book';
-    let h3 = document.createElement('h3');
-    h3.textContent = this.title;
-    let h4 = document.createElement('h4');
-    h4.textContent = this.author;
-    let p = document.createElement('p');
-    p.textContent = `${this.pages} pages`;
-    let deleteButton = document.createElement('button');
-    deleteButton.className = 'delete';
-    deleteButton.id = this.id;
-    deleteButton.textContent = 'Delete Book';
-    let read = document.createElement('button');
-    read.className = 'read'
-    read.textContent = this.read;
-    let id = document.createElement('span');
-    id.textContent = this.id;
-
-    div.appendChild(id);
-    div.appendChild(h3);
-    div.appendChild(h4);
-    div.appendChild(p);
-    div.appendChild(read);
-    div.appendChild(deleteButton);
-
-    let shelf = document.querySelector('.library-shelf')
-    shelf.appendChild(div)
-}
+const originalBook = new Book('The Hobbit', "J.R.R. Tolkien", 295, false, 0);
+const myLibrary = [originalBook];
+let bookId = 1;
 
 function addBookToLibrary(Book){
     myLibrary.push(Book);
